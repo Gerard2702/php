@@ -27,12 +27,14 @@ $imagen=$_SESSION['imagen'];
 	});
 
 	$(document).ready(function() {
+		$('#Users').addClass("selected");
+		$("#central").hide().load('usuarios.php').fadeIn();
 		$('#EmpresaAdd').click(function(){
 		$('#EmpresaAdd').addClass("selected");
 		$('#Empresas').removeClass("selected");
 		$('#Product').removeClass("selected");
 		$('#Users').removeClass("selected");
-        $("#central").load('agregarempresa.php');
+        $("#central").hide().load('agregarempresa.php').fadeIn();
     });
 
 		$('#Empresas').click(function(){
@@ -40,7 +42,7 @@ $imagen=$_SESSION['imagen'];
 		$('#EmpresaAdd').removeClass("selected");
 		$('#Product').removeClass("selected");
 		$('#Users').removeClass("selected");
-        $("#central").load('empresas.php');
+        $("#central").hide().load('empresas.php').fadeIn();
     });
 
 		$('#Product').click(function(){
@@ -48,7 +50,7 @@ $imagen=$_SESSION['imagen'];
 		$('#Empresas').removeClass("selected");
 		$('#EmpresaAdd').removeClass("selected");
 		$('#Users').removeClass("selected");
-        $("#central").load('productos.php');
+        $("#central").hide().load('productos.php').fadeIn();
     });
 
 		$('#Users').click(function(){
@@ -56,7 +58,7 @@ $imagen=$_SESSION['imagen'];
 		$('#Empresas').removeClass("selected");
 		$('#Product').removeClass("selected");
 		$('#EmpresaAdd').removeClass("selected");
-        $("#central").load('usuarios.php');
+        $("#central").hide().load('usuarios.php').fadeIn();
     });
 	});
 	</script>
