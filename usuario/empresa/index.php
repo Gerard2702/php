@@ -57,6 +57,7 @@ $imagen=$_SESSION['imagen'];
 			<a href="#!" class="collection-item grey darken-4 white-text activamenu" id="sel1">Ver productos</a>
 			<a href="#!" class="collection-item grey darken-4 white-text" id="sel2">Ingresar producto</a>
 			<a href="#!" class="collection-item grey darken-4 white-text" id="sel3">Modificar producto</a>
+			<a href="#!" class="collection-item grey darken-4 white-text" id="sel4">Ordenes de compra</a>
 		</div>
 	</div>
 	<script src="../../dist/empresa/empresa.js"></script>
