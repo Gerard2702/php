@@ -72,7 +72,7 @@ else{
                 if($micarrito[$i]!=NULL){ 
         ?>
         <tr>
-          <td><img src="<?php echo $micarrito[$i]['imagen']?>" alt="" width="100" height="125"> </td>
+          <td><img src="../../<?php echo $micarrito[$i]['imagen']?>" alt="" width="100" height="125"> </td>
           <td><?php echo $micarrito[$i]['nombre'];?></td>
            <td class="right-align"><?php echo "US $".$micarrito[$i]['precio'];?></td>
            <td class="right-align " ><?php echo $micarrito[$i]['cantidad'];?></td> 

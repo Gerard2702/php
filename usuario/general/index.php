@@ -75,7 +75,7 @@ if ($num_total_registros > 0) {
 <!-- NAVBAR DE USUARIO -->
 <nav>
     <div class="nav-wrapper grey darken-4">
-		<a href="#!" class="brand-logo"><img src="../../framework/img/logonav.png" class="responsive-img" width="120" height="90"></a>
+		<a href="index.php" class="brand-logo"><img src="../../framework/img/logonav.png" class="responsive-img" width="120" height="90"></a>
 		<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 		<ul class="right hide-on-med-and-down">
 			<li><a href="#!" id="carrito"><span class="large material-icons" >shopping_cart</span>Carrito<span class="badge amber-text darken-4-text"><?php if(isset($_SESSION['cancarrito'])) {echo $_SESSION['cancarrito'];} else{ echo "0";}?></span></a></li>

@@ -53,25 +53,44 @@ if ($num_total_registros > 0) {
 <div class="card-panel grey darken-4">
 	<div class="row">
 	<?php if($num >0){ ?>
-	<?php  while($producto = mysqli_fetch_array($resp2,MYSQL_ASSOC)){ ?>			
-		<div class="col s12 m12 l3 " >
-		<div class="card grey darken-4">
+	<?php  
+	$count=1;
+	while($producto = mysqli_fetch_array($resp2,MYSQL_ASSOC)){ ?>			
+		<div class="card grey darken-4 col s12 l3 m3" >
             <div class="center-align">
               <img src="<?php echo "../../".$producto['imagen'];?>" alt="" height="200" width="200">
             </div>
-            <div class="card-content">
+			<div class="card-content" id="info<?php echo $count;?>">
+			<center><a href="#" class="cyan-text text-darken-2" id="vermas<?php echo $count;?>">Ver Informacion</a></center>
+			</div>
+            <div class="card-content" id="descri<?php echo $count;?>">
               <span class="white-text" style="font-size:20px;"><?php echo $producto['nombre'];?></span><br>
               <span class="white-text" ><?php echo $producto['descripcion'];?></span><br>
-              <span class="white-text" ><?php echo $producto['precio'];?></span><br>
+              <span class="white-text" ><?php echo "$".$producto['precio'];?></span><br>
+			  <center><a href="#" class="cyan-text text-darken-2" id="vermass<?php echo $count;?>">Ocultar</a></center>
             </div>
+			<script>
+				$(document).ready(function(){
+					$('#descri<?php echo $count;?>').hide();
+				});
+				$('#vermas<?php echo $count;?>').click(function(){
+					$('#info<?php echo $count;?>').hide();
+					$('#descri<?php echo $count;?>').slideDown(2000);
+				});
+				$('#vermass<?php echo $count;?>').click(function(){
+					$('#descri<?php echo $count;?>').hide();
+					$('#info<?php echo $count;?>').slideDown(2000);
+				});
+			</script>
             <div class="card-action">
-              <a class="waves-effect waves-light btn cyan darken-2 white-text" id="agregarcarrito" 
+              <center><a class="waves-effect waves-light btn cyan darken-2 white-text" id="agregarcarrito" 
               onclick="agregarcarrito('<?php echo $producto['idproducto'];?>','<?php echo $producto['nombre'];?>','<?php echo $producto['precio'];?>','<?php echo $producto['imagen'];?>')">
-              Ver más Detalles</a>
+              + Carrito</a></center>
             </div>
-     	</div>
-     </div>
-	<?php  }//fin del mientras que recorre resultados
+		</div>
+	<?php  
+	$count++;
+	}//fin del mientras que recorre resultados
          ?>	
 	</div>
 </div>		
