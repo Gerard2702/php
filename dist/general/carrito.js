@@ -7,7 +7,7 @@ $('#comenzarcompra').click(function(){
 		});
 });
 
-$('#actualizar').click(function(){
+/*$('#actualizar').click(function(){
 
 		$("#opcion").html("<center><img src='../../framework/img/loading.gif' width='40' height='40'><h6>Cargando . . .</h6></center>");
         $.ajax({
@@ -21,4 +21,20 @@ $('#actualizar').click(function(){
 		}).done(function(data) {
 		$("#opcion").hide().html(data).fadeIn();
 		});
-});
+});*/
+
+function actualizarCantidad(id)
+{
+	$("#opcion").html("<center><img src='../../framework/img/loading.gif' width='40' height='40'><h6>Cargando . . .</h6></center>");
+        $.ajax({
+        type:"POST",
+		url: "../../carrito/carrito.php",
+		dataType:"text",
+		data:{
+    	id2:id,
+    	cantidad2:$("#cantidadnew"+id).val(),
+  		}
+		}).done(function(data) {
+		$("#opcion").hide().html(data).fadeIn();
+		});
+}

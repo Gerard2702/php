@@ -91,15 +91,15 @@ $_SESSION['cancarrito']=$cantidadcarrito;
                 if($micarrito[$i]!=NULL){ 
         ?>
         <tr>
-          <td><img src="<?php echo $micarrito[$i]['imagen']?>" alt="" width="100" height="125"> </td>
+          <td><img src="<?php echo "../../".$micarrito[$i]['imagen']?>" alt="" width="100" height="125"> </td>
           <td><?php echo $micarrito[$i]['nombre'];?></td>
            <td class="right-align"><?php echo "US $".$micarrito[$i]['precio'];?></td>
            <td class="right-align " >
             <form>
               <input class="center-align" type="hidden" id="id2" value="<?php echo $i;?>">
-              <input  class="center-align " type="number" id="cantidad2" size="2" maxlength="2" value="<?php echo $micarrito[$i]['cantidad'];?>" required>               
+              <input  class="center-align " type="number" id="cantidadnew<?php echo $i;?>" size="2" maxlength="2" value="<?php echo $micarrito[$i]['cantidad'];?>" required>               
            </td>
-           <td class="center-align"><a id="actualizar" class="btn-floating cyan darken-2" title="Actualizar"><i class="material-icons">replay</i></a></td>  
+           <td class="center-align"><a id="actualizar" onclick="actualizarCantidad('<?php echo $i;?>')" class="btn-floating cyan darken-2" title="Actualizar"><i class="material-icons">replay</i></a></td>  
            </form>
            <?php $subtotal=$micarrito[$i]['precio']*$micarrito[$i]['cantidad'];
                  $Total=$Total+$subtotal;?>

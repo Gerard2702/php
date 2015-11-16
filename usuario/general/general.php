@@ -49,7 +49,7 @@ if ($num_total_registros > 0) {
 		<div class="col s12 m12 l3 " >
 		<div class="card grey darken-4">
             <div class="center-align">
-              <img src="<?php echo $producto['imagen'];?>" alt="" height="200" width="200">
+              <img src="<?php echo "../../".$producto['imagen'];?>" alt="" height="200" width="200">
             </div>
             <div class="card-content">
               <span class="white-text" style="font-size:20px;"><?php echo $producto['nombre'];?></span><br>
@@ -57,7 +57,7 @@ if ($num_total_registros > 0) {
               <span class="white-text" ><?php echo $producto['precio'];?></span><br>
             </div>
             <div class="card-action">
-              <a class="waves-effect waves-light btn cyan darken-2 " id="agregarcarrito" 
+              <a class="waves-effect waves-light btn cyan darken-2 white-text" id="agregarcarrito" 
               onclick="agregarcarrito('<?php echo $producto['idproducto'];?>','<?php echo $producto['nombre'];?>','<?php echo $producto['precio'];?>','<?php echo $producto['imagen'];?>')">
               Ver más Detalles</a>
             </div>
