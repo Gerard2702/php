@@ -26,15 +26,6 @@
 		<i class="material-icons prefix white-text">phone</i>
         <input placeholder="Telefono" id="telefono" name="telefono" type="text" class="validate white-text" required>
     </div>
-	<div class="file-field input-field">
-      <div class="waves-effect waves-light btn cyan darken-2">
-        <span>Archivo</span>
-        <input type="file" name="imagen" placeholder="Selecionar Imagen" required>
-      </div>
-      <div class="file-path-wrapper">
-        <input class="file-path validate white-text" type="text">
-      </div>
-    </div>
 	<br>
 	<center><button class="waves-effect waves-light btn cyan darken-2" type="submit">Registrar</button></center>
 	</form>

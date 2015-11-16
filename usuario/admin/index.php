@@ -19,52 +19,14 @@ $imagen=$_SESSION['imagen'];
 	<script src="../../framework/materialize/js/materialize.min.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 	<link rel="shortcut icon" href="../../framework/img/logopeq.png">
+	<link href="../../dist/admin/admin.css" rel="stylesheet">
 	<title>PC-Locker</title>
 	<script>
 	$(document).ready(function(){
 		$(".button-collapse").sideNav();
 		$('#drop').dropdown();
 	});
-
-	$(document).ready(function() {
-		$('#EmpresaAdd').click(function(){
-		$('#EmpresaAdd').addClass("selected");
-		$('#Empresas').removeClass("selected");
-		$('#Product').removeClass("selected");
-		$('#Users').removeClass("selected");
-        $("#central").load('agregarempresa.php');
-    });
-
-		$('#Empresas').click(function(){
-		$('#Empresas').addClass("selected");
-		$('#EmpresaAdd').removeClass("selected");
-		$('#Product').removeClass("selected");
-		$('#Users').removeClass("selected");
-        $("#central").load('empresas.php');
-    });
-
-		$('#Product').click(function(){
-		$('#Product').addClass("selected");
-		$('#Empresas').removeClass("selected");
-		$('#EmpresaAdd').removeClass("selected");
-		$('#Users').removeClass("selected");
-        $("#central").load('productos.php');
-    });
-
-		$('#Users').click(function(){
-		$('#Users').addClass("selected");
-		$('#Empresas').removeClass("selected");
-		$('#Product').removeClass("selected");
-		$('#EmpresaAdd').removeClass("selected");
-        $("#central").load('usuarios.php');
-    });
-	});
 	</script>
-	<style>
-	.selected{
-		border-right: 8px solid #29CAE5;
-	}
-	</style>
 </head>
 <body class="grey lighten-1">
 <!-- NAVBAR DE ADMINISTRADOR -->
@@ -97,6 +59,7 @@ $imagen=$_SESSION['imagen'];
 			<a href="#!"  style="text-decoration:none; color:white;"class="collection-item grey darken-4" id="Product">Productos</a>
 		</div>
 	</div>
+	<script src="../../dist/admin/admin.js"></script>
 	<!-- AQUI SE MUESTRA LO QUE SE SELECCIONA EN EL MENU -->
 	<div class="col l10 m6 s12" id="central">		
 	</div>

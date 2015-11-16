@@ -15,4 +15,4 @@ $conn->conectar();
 $query = "INSERT INTO empresa(nombre, descripcion, usuario, pass, imagen, telefono, correo, estado, rol_idrol) values('$nombre', '$descripcion', '$usuario', '$contra2', '$imagen', '$telefono', '$correo', 1, 2)";
 $resp=$conn->insert_delete_update($query); 
 header("location: index.php");
-?>
+?>	

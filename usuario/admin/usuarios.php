@@ -1,3 +1,7 @@
+<script src="../../framework/jquery/jquery-2.1.4.min.js"></script>
+<link href="../../framework/materialize/font/material-icon.css" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="../../framework/materialize/css/materialize.min.css" media="screen,projection">
+<script src="../../framework/materialize/js/materialize.min.js"></script>
 <?php
 include("../../class/conexion/conexion.php");
 $conn = new Conexion();
@@ -7,10 +11,10 @@ $resp=$conn->query($query);
 $numuser = mysqli_num_rows($resp);
 
 ?>
-		<div class="card-panel grey darken-4">
-          <div class="panel-body">
+		<div class="card-panel grey darken-4" class="col l10 m6 s12">
+          <div class="panel-body" class="col l10 m6 s12">
           <?php  if($numuser>0){?>
-            <table class="table  table-hover">
+            <table class="responsive-table">
             <thead>
               <tr>
                 <td class="white-text">Nombre</td>
