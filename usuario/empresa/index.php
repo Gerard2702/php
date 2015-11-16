@@ -3,6 +3,7 @@ session_start();
 if(!isset($_SESSION['rol']) && !isset($_SESSION['id'])){
 	header("Location:../../class/sesion/cerrarsesion.php");
 }
+include("../../class/conexion/conexion.php");
 if($_SESSION['rol']==2){
 $nombre=$_SESSION['nombre'];
 $imagen=$_SESSION['imagen'];
@@ -31,7 +32,7 @@ $imagen=$_SESSION['imagen'];
 <!-- NAVBAR DE EMPRESA -->
 <nav>
     <div class="nav-wrapper grey darken-4">
-		<a href="#!" class="brand-logo"><img src="../../framework/img/logonav.png" class="responsive-img" width="120" height="90"></a>
+		<a href="" class="brand-logo"><img src="../../framework/img/logonav.png" class="responsive-img" width="120" height="90"></a>
 		<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 		<ul class="right hide-on-med-and-down">
 			<li><a id="drop" data-activates='dropdown1' href="#"><span class="material-icons">call_received</span><?php echo $nombre; ?></a></li>
@@ -61,7 +62,7 @@ $imagen=$_SESSION['imagen'];
 	<!-- AQUI SE MUESTRA LO QUE SE SELECCIONA EN EL MENU -->
 	<div class="col l10 m6 s12">
 		<div  id="opcion">
-			<?php include ('../../productos/ver_productos.php'); ?>
+			<?php include ('../../productos/ver_productos_2.php'); ?>
 		</div>
 	</div>
 </div>
