@@ -25,6 +25,7 @@ $('#comenzarcompra').click(function(){
 
 function actualizarCantidad(id)
 {
+	var cantidad2 = $("#cantidadnew"+id).val();
 	$("#opcion").html("<center><img src='../../framework/img/loading.gif' width='40' height='40'><h6>Cargando . . .</h6></center>");
         $.ajax({
         type:"POST",
@@ -32,8 +33,31 @@ function actualizarCantidad(id)
 		dataType:"text",
 		data:{
     	id2:id,
-    	cantidad2:$("#cantidadnew"+id).val(),
+    	cantidadnew:cantidad2 ,
   		}
+		}).done(function(data) {
+		$("#opcion").hide().html(data).fadeIn();
+		});
+}
+
+function eliminarArticulo(id){
+	$("#opcion").html("<center><img src='../../framework/img/loading.gif' width='40' height='40'><h6>Cargando . . .</h6></center>");
+        $.ajax({
+        type:"POST",
+		url: "../../carrito/carrito.php",
+		dataType:"text",
+		data:{
+    	id3:id,
+  		}
+		}).done(function(data) {
+		$("#opcion").hide().html(data).fadeIn();
+		});
+}
+
+function continuarComprando(){
+	$("#opcion").html("<center><img src='../../framework/img/loading.gif' width='40' height='40'><h6>Cargando . . .</h6></center>");
+        $.ajax({
+		url: "../../usuario/general/general.php"
 		}).done(function(data) {
 		$("#opcion").hide().html(data).fadeIn();
 		});

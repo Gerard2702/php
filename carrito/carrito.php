@@ -40,7 +40,7 @@ if(isset($_SESSION['carrito'])){
 }
 if(isset($_POST['id2'])){
   $indice=$_POST['id2'];
-  $cantidad2 = $_POST['cantidad2'];
+  $cantidad2 = $_POST['cantidadnew'];
   $micarrito[$indice]['cantidad']=$cantidad2;
 }
 
@@ -99,16 +99,13 @@ $_SESSION['cancarrito']=$cantidadcarrito;
               <input class="center-align" type="hidden" id="id2" value="<?php echo $i;?>">
               <input  class="center-align " type="number" id="cantidadnew<?php echo $i;?>" size="2" maxlength="2" value="<?php echo $micarrito[$i]['cantidad'];?>" required>               
            </td>
-           <td class="center-align"><a id="actualizar" onclick="actualizarCantidad('<?php echo $i;?>')" class="btn-floating cyan darken-2" title="Actualizar"><i class="material-icons">replay</i></a></td>  
+           <td class="center-align"><button id="actualizar" onclick="actualizarCantidad('<?php echo $i;?>')" class="mi-btn-flat white " title="Actualizar"><i class="material-icons cyan-text text-darken-2">replay</i></button></td>  
            </form>
            <?php $subtotal=$micarrito[$i]['precio']*$micarrito[$i]['cantidad'];
                  $Total=$Total+$subtotal;?>
           <td class="right-align"><?php echo "US $".$subtotal;?></td> 
           <td class="right-align">
-            <form action="" method="POST">
-              <input type="hidden" value="<?php echo $i;?>" name="id3">
-              <button class="mi-btn-flat white" title="Eliminar"><i class="material-icons grey-text">close</i></button>  
-            </form>
+              <button class="mi-btn-flat white" title="Eliminar" onclick="eliminarArticulo(<?php echo $i;?>)"><i class="material-icons grey-text">close</i></button>  
           </td>    
           </tr>  
         <?php
@@ -124,7 +121,7 @@ $_SESSION['cancarrito']=$cantidadcarrito;
         </tr>
         <tr>
           <td colspan="5" class="right-align"><a href="ebooks.php">
-          <button class="waves-effect waves-light btn white micolor-text center-align ">Continuar Comprando</button>
+          <a class="waves-effect waves-light btn white grey-text text-darken-4 center-align" onclick="continuarComprando()">Continuar Comprando</a>
           </a></td>
           <td colspan="2" class="right-align">
             <form action="confirmarebooks.php" method="POST">
@@ -160,8 +157,8 @@ $_SESSION['cancarrito']=$cantidadcarrito;
           <div class="row"> 
           <?php if(isset($micarrito) && $_SESSION['cancarrito']!=0){ ?>
             <form action="confirmarebooks.php" method="POST">
-              <button title="Tramitar" type="submit" name="tramitar"  class="col s12 waves-effect waves-light btn light-blue darken-4">
-                Tramitar
+              <button title="Tramitar" type="submit" name="tramitar"  class="col s12 waves-effect waves-light btn cyan darken-2">
+                PAGAR
               </button>
             </form>
             <?php } else {?>
@@ -172,8 +169,6 @@ $_SESSION['cancarrito']=$cantidadcarrito;
             </form>
             <?php } ?>
             <br>
-            <br>
-            <a href="ebooks.php"><button class="col s12 waves-effect waves-light btn white micolor-text center-align" style="font-size:12px;">Seguir Comprando</button>
             </a>
           </div>
         </div>
