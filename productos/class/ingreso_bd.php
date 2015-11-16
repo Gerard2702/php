@@ -19,7 +19,7 @@ else{
 		$conn = new Conexion();
 		$conn->conectar();
 		$query="INSERT INTO producto(nombre,descripcion,precio,estado,imagen,cantidad,empresa_idempresa,categoria_idcategoria) VALUES('$nombre','$descrip','$precio','1','$imagenfile','$cant','$empresa','$categ')";
-		$resp=$conn->insert_delete_update($query);
+		$conn->insert_delete_update($query);
 		$conn->desconectar();
 		header("Location:../../usuario/empresa/?success=1");
 		exit();

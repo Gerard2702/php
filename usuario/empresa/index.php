@@ -33,7 +33,7 @@ $imagen=$_SESSION['imagen'];
 <!-- NAVBAR DE EMPRESA -->
 <nav>
     <div class="nav-wrapper grey darken-4">
-		<a href="" class="brand-logo"><img src="../../framework/img/logonav.png" class="responsive-img" width="120" height="90"></a>
+		<a href="index.php" class="brand-logo"><img src="../../framework/img/logonav.png" class="responsive-img" width="120" height="90"></a>
 		<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 		<ul class="right hide-on-med-and-down">
 			<li><a id="drop" data-activates='dropdown1' href="#"><span class="material-icons">call_received</span><?php echo $nombre; ?></a></li>
@@ -67,6 +67,9 @@ $imagen=$_SESSION['imagen'];
 		</div>
 	</div>
 </div>
+<!-- MODAL PARA MODIFICAR PRODUCTOS -->
+<div id="modificarproducto" class="modal">
+</div>
 <!-- ERROR DE CREACION DE PRODUCTO -->
 <div id="errorproduct" class="modal">
     <div class="modal-content">
@@ -88,6 +91,16 @@ $imagen=$_SESSION['imagen'];
       <a class="modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
     </div>
 </div>
+<!-- PRODUCTO MODIFICADO CORRECTAMENTE -->
+<div id="correctomodifproduct" class="modal">
+    <div class="modal-content">
+		<center><img src="../../framework/img/icons/confirmation.png" width="60" height="60"></center>
+		<center><h6>EL PRODUCTO SE HA MODIFICADO CORRECTAMENTE</h6></center>
+    </div>
+    <div class="modal-footer">
+      <a class="modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
+    </div>
+</div>
 <?php
 if(isset($_GET['err'])){
 	echo"
@@ -100,6 +113,13 @@ if(isset($_GET['success'])){
 	echo"
 	<script>
 		 $('#correctoproduct').openModal();
+	</script>
+	";
+}
+if(isset($_GET['modifok'])){
+	echo"
+	<script>
+		 $('#correctomodifproduct').openModal();
 	</script>
 	";
 }

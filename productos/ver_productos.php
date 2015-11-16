@@ -19,6 +19,9 @@ if(mysqli_num_rows($resp)==0){
 }
 else{
 	echo'
+	<script>
+	 $(".materialboxed").materialbox();
+	</script>
 	<table class="responsive-table white-text">
 	<thead>
 		<tr>
@@ -39,7 +42,7 @@ else{
 	$cantidad=$data['cantidad'];
 	echo'
 	<tr>
-		<td><center><img src="../../'.$imagen.'"  width="40" height="50"></center></td>
+		<td><center><img src="../../'.$imagen.'"  width="40" height="50" class="materialboxed"></center></td>
 		<td><center><p><strong>'.$nombre.'</strong></p></center></td>
 		<td><center><p>'.$descrip.'</p></center></td>
 		<td><center><p>$'.$precio.'</p></center></td>
