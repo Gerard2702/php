@@ -51,11 +51,29 @@
       <a class="modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
     </div>
 </div>
+<!-- REGISTRO COMPLETO -->
+<div id="registrook" class="modal">
+    <div class="modal-content">
+		<center><img src="framework/img/icons/confirmation.png" width="60" height="60"></center>
+		<center><h6>Bienvenido a PC-Locker</h6></center>
+		<center><h5>Tu registro se completo correctamente, Ya puedes Iniciar Sesi&oacute;n</h5></center>
+    </div>
+    <div class="modal-footer">
+      <a class="modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
+    </div>
+</div>
 <?php
 if(isset($_GET['err'])){
 	echo"
 	<script>
 		 $('#error').openModal();
+	</script>
+	";
+}
+if(isset($_GET['registro'])){
+	echo"
+	<script>
+		 $('#registrook').openModal();
 	</script>
 	";
 }

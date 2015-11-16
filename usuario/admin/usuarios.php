@@ -20,7 +20,6 @@ $numuser = mysqli_num_rows($resp);
                 <td class="white-text">Nombre</td>
                 <td class="white-text">Apellido</td>
                 <td class="white-text">Usuario</td>
-                <td class="white-text">Contraseña</td>
                 <td class="white-text">Correo</td>
                 <td class="white-text">Opciones</td>
               </tr>
@@ -34,7 +33,6 @@ $numuser = mysqli_num_rows($resp);
                                 <td class="white-text"><?php echo $modulo['nombre'];?></td>
                                 <td class="white-text"><?php echo $modulo['apellido'];?></td>
                                 <td class="white-text"><?php echo $modulo['usuario'];?></td>
-                                <td class="white-text"><?php echo $modulo['pass'];?></td>  
                                 <td class="white-text"><?php echo $modulo['correo'];?></td>              
                                 <td><button class="btn-floating waves-effect waves-light" title="Modificar" id="modificar"><i class="material-icons white-text">settings</i></button>&nbsp;<button class="btn-floating waves-effect waves-light" title="Eliminar"><i class="material-icons white-text">close</i></button></td>
                                 </tr>   

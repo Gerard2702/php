@@ -26,6 +26,45 @@ $imagen=$_SESSION['imagen'];
 		$(".button-collapse").sideNav();
 		$('#drop').dropdown();
 	});
+<<<<<<< HEAD
+=======
+
+	$(document).ready(function() {
+		$('#Users').addClass("selected");
+		$("#central").hide().load('usuarios.php').fadeIn();
+		$('#EmpresaAdd').click(function(){
+		$('#EmpresaAdd').addClass("selected");
+		$('#Empresas').removeClass("selected");
+		$('#Product').removeClass("selected");
+		$('#Users').removeClass("selected");
+        $("#central").hide().load('agregarempresa.php').fadeIn();
+    });
+
+		$('#Empresas').click(function(){
+		$('#Empresas').addClass("selected");
+		$('#EmpresaAdd').removeClass("selected");
+		$('#Product').removeClass("selected");
+		$('#Users').removeClass("selected");
+        $("#central").hide().load('empresas.php').fadeIn();
+    });
+
+		$('#Product').click(function(){
+		$('#Product').addClass("selected");
+		$('#Empresas').removeClass("selected");
+		$('#EmpresaAdd').removeClass("selected");
+		$('#Users').removeClass("selected");
+        $("#central").hide().load('productos.php').fadeIn();
+    });
+
+		$('#Users').click(function(){
+		$('#Users').addClass("selected");
+		$('#Empresas').removeClass("selected");
+		$('#Product').removeClass("selected");
+		$('#EmpresaAdd').removeClass("selected");
+        $("#central").hide().load('usuarios.php').fadeIn();
+    });
+	});
+>>>>>>> origin/master
 	</script>
 </head>
 <body class="grey lighten-1">

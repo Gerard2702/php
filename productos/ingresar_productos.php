@@ -8,7 +8,7 @@ echo'
 	</script>
     <div class="card-panel grey darken-4">
 	<center><h6 class="white-text">PC-Locker<br><strong>Ingresar Nuevo Producto</strong></h6></center>
-	<form type="post" action="#">
+	<form method="post" action="../../productos/class/ingreso_bd.php" id="formproducto" enctype="multipart/form-data">
 	<div class="input-field">
 		<i class="material-icons prefix white-text">subject</i>
         <input placeholder="Nombre" name="nombre" type="text" class="validate white-text" required>
@@ -47,7 +47,7 @@ echo'
 	<div class="file-field input-field">
       <div class="waves-effect waves-light btn cyan darken-2">
         <span>Archivo</span>
-        <input type="file" name="imagen" placeholder="Selecionar Imagen" required>
+        <input type="file" name="imagen" accept="image/*" placeholder="Selecionar Imagen" required>
       </div>
       <div class="file-path-wrapper">
         <input class="file-path validate white-text" type="text">
@@ -55,8 +55,13 @@ echo'
     </div>
 	<br>
 	<input name="empresa" type="hidden" value="'.$empresa.'">
-	<center><button class="waves-effect waves-light btn cyan darken-2" type="submit">Guardar producto</button></center>
+	<center id="submitboton"><button class="waves-effect waves-light btn cyan darken-2" type="submit">Guardar producto</button></center>
 	</form>
 	</div>
+	<script>
+		$("#formproducto").submit(function(){
+			$("#submitboton").hide().html("<img src=\'../../framework/img/loading.gif\' width=\'40\' height=\'40\'><h6 style=\'color:white;\'>Guardando . . .</h6>").fadeIn();
+		});
+	</script>
 ';
 ?>

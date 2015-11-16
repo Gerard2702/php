@@ -1,0 +1,23 @@
+.selected{
+		border-right: 8px solid #29CAE5;
+	}
+
+ .mi-card-panel {
+    background-color: #212121;
+    border-radius: 2px;
+    border: 1px solid #fff;
+    margin: 0.5rem 0 1rem;
+    padding: 20px;
+}
+
+.mi-btn, .mi-btn-large, .mi-btn-flat {
+    border: medium none;
+    border-radius: 2px;
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    outline: 0 none;
+    padding: 0 0rem;
+    text-transform: uppercase;
+    vertical-align: middle;
+}

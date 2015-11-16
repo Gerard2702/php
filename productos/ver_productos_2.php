@@ -1,6 +1,4 @@
 <?php
-session_start();
-include("../class/conexion/conexion.php");
 $empresa=$_SESSION['id'];
 echo'
 <div class="card-panel grey darken-4">

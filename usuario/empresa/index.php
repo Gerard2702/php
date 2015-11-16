@@ -3,6 +3,7 @@ session_start();
 if(!isset($_SESSION['rol']) && !isset($_SESSION['id'])){
 	header("Location:../../class/sesion/cerrarsesion.php");
 }
+include("../../class/conexion/conexion.php");
 if($_SESSION['rol']==2){
 $nombre=$_SESSION['nombre'];
 $imagen=$_SESSION['imagen'];
@@ -24,6 +25,7 @@ $imagen=$_SESSION['imagen'];
 		$(".button-collapse").sideNav();
 		$('#drop').dropdown();
 		$('select').material_select();
+		$('.modal-trigger').leanModal();
 	});
 	</script>
 </head>
@@ -31,7 +33,7 @@ $imagen=$_SESSION['imagen'];
 <!-- NAVBAR DE EMPRESA -->
 <nav>
     <div class="nav-wrapper grey darken-4">
-		<a href="#!" class="brand-logo"><img src="../../framework/img/logonav.png" class="responsive-img" width="120" height="90"></a>
+		<a href="index.php" class="brand-logo"><img src="../../framework/img/logonav.png" class="responsive-img" width="120" height="90"></a>
 		<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 		<ul class="right hide-on-med-and-down">
 			<li><a id="drop" data-activates='dropdown1' href="#"><span class="material-icons">call_received</span><?php echo $nombre; ?></a></li>
@@ -55,16 +57,77 @@ $imagen=$_SESSION['imagen'];
 			<a href="#!" class="collection-item grey darken-4 white-text activamenu" id="sel1">Ver productos</a>
 			<a href="#!" class="collection-item grey darken-4 white-text" id="sel2">Ingresar producto</a>
 			<a href="#!" class="collection-item grey darken-4 white-text" id="sel3">Modificar producto</a>
+			<a href="#!" class="collection-item grey darken-4 white-text" id="sel4">Ordenes de compra</a>
 		</div>
 	</div>
 	<script src="../../dist/empresa/empresa.js"></script>
 	<!-- AQUI SE MUESTRA LO QUE SE SELECCIONA EN EL MENU -->
 	<div class="col l10 m6 s12">
 		<div  id="opcion">
-			<?php include ('../../productos/ver_productos.php'); ?>
+			<?php include ('../../productos/ver_productos_2.php'); ?>
 		</div>
 	</div>
 </div>
+<!-- MODAL PARA MODIFICAR PRODUCTOS -->
+<div id="modificarproducto" class="modal">
+</div>
+<!-- DETALLE DE COMPRA -->
+<div id="detalledecompra" class="modal">
+</div>
+<!-- ERROR DE CREACION DE PRODUCTO -->
+<div id="errorproduct" class="modal">
+    <div class="modal-content">
+		<center><img src="../../framework/img/icons/warning.png" width="60" height="60"></center>
+		<center><h6>ERROR DE CREACION DE PRODUCTO</h6></center>
+		<center><h6>Intente nuevamente</h6></center>
+    </div>
+    <div class="modal-footer">
+      <a class="modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
+    </div>
+</div>
+<!-- PRODUCTO CREADO CORRECTAMENTE -->
+<div id="correctoproduct" class="modal">
+    <div class="modal-content">
+		<center><img src="../../framework/img/icons/confirmation.png" width="60" height="60"></center>
+		<center><h6>EL PRODUCTO SE HA CREADO CORRECTAMENTE</h6></center>
+    </div>
+    <div class="modal-footer">
+      <a class="modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
+    </div>
+</div>
+<!-- PRODUCTO MODIFICADO CORRECTAMENTE -->
+<div id="correctomodifproduct" class="modal">
+    <div class="modal-content">
+		<center><img src="../../framework/img/icons/confirmation.png" width="60" height="60"></center>
+		<center><h6>EL PRODUCTO SE HA MODIFICADO CORRECTAMENTE</h6></center>
+    </div>
+    <div class="modal-footer">
+      <a class="modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
+    </div>
+</div>
+<?php
+if(isset($_GET['err'])){
+	echo"
+	<script>
+		 $('#errorproduct').openModal();
+	</script>
+	";
+}
+if(isset($_GET['success'])){
+	echo"
+	<script>
+		 $('#correctoproduct').openModal();
+	</script>
+	";
+}
+if(isset($_GET['modifok'])){
+	echo"
+	<script>
+		 $('#correctomodifproduct').openModal();
+	</script>
+	";
+}
+?>
 <!-- FOOTER -->
 <?php include("../../class/footer/footer.php"); ?>
 </body>
