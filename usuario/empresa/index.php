@@ -28,7 +28,7 @@ $imagen=$_SESSION['imagen'];
 <body class="grey lighten-1">
 <!-- NAVBAR DE EMPRESA -->
 <nav>
-    <div class="nav-wrapper grey darken-4">
+    <div class="nav-wrapper grey darken-3">
 		<a href="#!" class="brand-logo"><img src="../../framework/img/logonav.png" class="responsive-img" width="120" height="90"></a>
 		<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 		<ul class="right hide-on-med-and-down">
