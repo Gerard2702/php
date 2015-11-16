@@ -25,46 +25,9 @@ $imagen=$_SESSION['imagen'];
 	$(document).ready(function(){
 		$(".button-collapse").sideNav();
 		$('#drop').dropdown();
+		$('select').material_select();
+		$('.modal-trigger').leanModal();
 	});
-<<<<<<< HEAD
-=======
-
-	$(document).ready(function() {
-		$('#Users').addClass("selected");
-		$("#central").hide().load('usuarios.php').fadeIn();
-		$('#EmpresaAdd').click(function(){
-		$('#EmpresaAdd').addClass("selected");
-		$('#Empresas').removeClass("selected");
-		$('#Product').removeClass("selected");
-		$('#Users').removeClass("selected");
-        $("#central").hide().load('agregarempresa.php').fadeIn();
-    });
-
-		$('#Empresas').click(function(){
-		$('#Empresas').addClass("selected");
-		$('#EmpresaAdd').removeClass("selected");
-		$('#Product').removeClass("selected");
-		$('#Users').removeClass("selected");
-        $("#central").hide().load('empresas.php').fadeIn();
-    });
-
-		$('#Product').click(function(){
-		$('#Product').addClass("selected");
-		$('#Empresas').removeClass("selected");
-		$('#EmpresaAdd').removeClass("selected");
-		$('#Users').removeClass("selected");
-        $("#central").hide().load('productos.php').fadeIn();
-    });
-
-		$('#Users').click(function(){
-		$('#Users').addClass("selected");
-		$('#Empresas').removeClass("selected");
-		$('#Product').removeClass("selected");
-		$('#EmpresaAdd').removeClass("selected");
-        $("#central").hide().load('usuarios.php').fadeIn();
-    });
-	});
->>>>>>> origin/master
 	</script>
 </head>
 <body class="grey lighten-1">
@@ -92,7 +55,7 @@ $imagen=$_SESSION['imagen'];
 	<div class="col l2 m6 s12">
 		<div class="collection grey darken-4">
 			<center class="collection-item grey darken-4"><span class="white-text" ><strong>Menu</strong></span></center>
-			<a href="#!" class="collection-item grey darken-4" style="text-decoration:none; color:white;" id="Users">Usuarios</a>
+			<a href="#!" class="collection-item grey darken-4 selected" style="text-decoration:none; color:white;" id="Users">Usuarios</a>
 			<a href="#!" style="text-decoration:none; color:white;" class="collection-item grey darken-4" id="EmpresaAdd">Agregar Empresa</a>
 			<a href="#!" style="text-decoration:none; color:white;" class="collection-item grey darken-4" id="Empresas">Empresas</a>
 			<a href="#!"  style="text-decoration:none; color:white;"class="collection-item grey darken-4" id="Product">Productos</a>
@@ -100,7 +63,8 @@ $imagen=$_SESSION['imagen'];
 	</div>
 	<script src="../../dist/admin/admin.js"></script>
 	<!-- AQUI SE MUESTRA LO QUE SE SELECCIONA EN EL MENU -->
-	<div class="col l10 m6 s12" id="central">		
+	<div class="col l10 m6 s12" id="central">	
+	<?php include ('../../usuario/admin/usuarios.php'); ?>	
 	</div>
 </div>
 <!-- FOOTER -->
