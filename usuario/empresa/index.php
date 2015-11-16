@@ -25,6 +25,7 @@ $imagen=$_SESSION['imagen'];
 		$(".button-collapse").sideNav();
 		$('#drop').dropdown();
 		$('select').material_select();
+		$('.modal-trigger').leanModal();
 	});
 	</script>
 </head>
@@ -66,6 +67,43 @@ $imagen=$_SESSION['imagen'];
 		</div>
 	</div>
 </div>
+<!-- ERROR DE CREACION DE PRODUCTO -->
+<div id="errorproduct" class="modal">
+    <div class="modal-content">
+		<center><img src="../../framework/img/icons/warning.png" width="60" height="60"></center>
+		<center><h6>ERROR DE CREACION DE PRODUCTO</h6></center>
+		<center><h6>Intente nuevamente</h6></center>
+    </div>
+    <div class="modal-footer">
+      <a class="modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
+    </div>
+</div>
+<!-- PRODUCTO CREADO CORRECTAMENTE -->
+<div id="correctoproduct" class="modal">
+    <div class="modal-content">
+		<center><img src="../../framework/img/icons/confirmation.png" width="60" height="60"></center>
+		<center><h6>EL PRODUCTO SE HA CREADO CORRECTAMENTE</h6></center>
+    </div>
+    <div class="modal-footer">
+      <a class="modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
+    </div>
+</div>
+<?php
+if(isset($_GET['err'])){
+	echo"
+	<script>
+		 $('#errorproduct').openModal();
+	</script>
+	";
+}
+if(isset($_GET['success'])){
+	echo"
+	<script>
+		 $('#correctoproduct').openModal();
+	</script>
+	";
+}
+?>
 <!-- FOOTER -->
 <?php include("../../class/footer/footer.php"); ?>
 </body>
