@@ -1,0 +1,11 @@
+.selected{
+		border-right: 8px solid #29CAE5;
+	}
+
+ .mi-card-panel {
+    background-color: #212121;
+    border-radius: 2px;
+    border: 1px solid #fff;
+    margin: 0.5rem 0 1rem;
+    padding: 20px;
+}
