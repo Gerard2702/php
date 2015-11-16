@@ -4,7 +4,6 @@ include("../class/conexion/conexion.php");
 $empresa=$_SESSION['id'];
 echo'
 <div class="card-panel grey darken-4">
-<div class="row">
 ';
 $conn = new Conexion();
 $conn->conectar();
@@ -13,12 +12,14 @@ $resp=$conn->query($query);
 $conn->desconectar();
 if(mysqli_num_rows($resp)==0){
 	echo'
+	<div class="row">
 	<center><img src="../../framework/img/icons/warning.png" width="60" height="60"></center>
 	<center><h6 class="white-text">No tienes productos registrados</h6></center>
 	';
 }
 else{
 	echo'
+	<div class="row" style="height:600px; overflow-y:auto;">
 	<script>
 	 $(".materialboxed").materialbox();
 	</script>
