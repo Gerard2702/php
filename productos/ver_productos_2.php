@@ -3,17 +3,6 @@ $empresa=$_SESSION['id'];
 echo'
 <div class="card-panel grey darken-4">
 <div class="row">
-<table class="responsive-table white-text">
-<thead>
-	<tr>
-		<td><center>Imagen</center></td>
-		<td><center>Nombre</center></td>
-		<td><center>Descripci&oacute;n</center></td>
-		<td><center>Precio</center></td>
-		<td><center>Cantidad</center></td>
-	</tr>
-</thead>
-<tbody>
 ';
 $conn = new Conexion();
 $conn->conectar();
@@ -21,8 +10,25 @@ $query="SELECT * FROM producto WHERE empresa_idempresa='$empresa'";
 $resp=$conn->query($query);
 $conn->desconectar();
 if(mysqli_num_rows($resp)==0){
+	echo'
+	<center><img src="../../framework/img/icons/warning.png" width="60" height="60"></center>
+	<center><h6 class="white-text">No tienes productos registrados</h6></center>
+	';
 }
 else{
+	echo'
+	<table class="responsive-table white-text">
+	<thead>
+		<tr>
+			<td><center>Imagen</center></td>
+			<td><center>Nombre</center></td>
+			<td><center>Descripci&oacute;n</center></td>
+			<td><center>Precio</center></td>
+			<td><center>Cantidad</center></td>
+		</tr>
+	</thead>
+	<tbody>
+	';
 	while($data=$resp->fetch_assoc()){
 	$nombre=$data['nombre'];
 	$descrip=$data['descripcion'];
@@ -39,10 +45,12 @@ else{
 	</tr>
 	';
 	}
+	echo'
+	</tbody>
+	</table>
+	';
 }
 echo'
-</tbody>
-</table>
 </div>
 </div>
 ';
