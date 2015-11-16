@@ -63,8 +63,9 @@ else{
       });
     });
 $('#eliminar$count').click(function(){
-      $('#eliminar').openModal();
-      $.get( '../../usuario/admin/eliminar.php', { id:'$id'} );
+      $.get( '../../usuario/admin/eliminar.php', { id:'$id'} )
+	  .done(function() {
+      });
     });
   </script>
   ";

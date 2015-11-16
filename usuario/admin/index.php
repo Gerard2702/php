@@ -103,6 +103,15 @@ $imagen=$_SESSION['imagen'];
       <a class="modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
     </div>
 </div>
+<?php 
+if(isset($_GET['elifok'])){
+	echo"
+	<script>
+	$('#eliminar').openModal();
+	</script>
+	";
+}
+?>
 <div id="eliminar" class="modal">
     <div class="modal-content">
 		<center><img src="../../framework/img/icons/confirmation.png" width="60" height="60"></center>
