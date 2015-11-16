@@ -9,7 +9,7 @@ $contra = md5($pass);
 $idusuario=$_POST['idusuario'];
 $conn = new Conexion();
 $conn->conectar();
-$query="UPDATE usuario SET nombre='$nombre', apellido='$apelliod', correo='$correo', usuario='$usuario', pass='$contra' WHERE idusuario='$idusuario' ";
+$query="UPDATE usuario SET nombre='$nombre', apellido='$apellido', correo='$correo', usuario='$usuario', pass='$contra' WHERE idusuario='$idusuario' ";
 if ($conn->insert_delete_update($query)){
 	$conn->desconectar();
 	header("Location:../../usuario/admin/?modifok=1");

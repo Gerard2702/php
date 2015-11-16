@@ -48,8 +48,7 @@ else{
     <td><center><p>'.$usuario.'</p></center></td>
     <td><center><p>'.$correo.'</p></center></td>
     <td><center><p>'.$telefono.'</p></center></td>
-    <td><center><button class="btn-floating waves-effect waves-light" title="Modificar" id="modificar'.$count.'"><i class="material-icons white-text">settings</i></button>
-    <button class="btn-floating waves-effect waves-light" title="Eliminar" id="eliminar'.$count.'"><i class="material-icons white-text">close</i></button></center></td>
+    <td><center><button class="btn-floating waves-effect waves-light" title="Modificar" id="modificar'.$count.'"><i class="material-icons white-text">settings</i></button></center></td>
   </tr>
   ';
   echo"
@@ -60,11 +59,6 @@ else{
       $.get( '../../usuario/admin/modificarempresa.php', { id:'$id'} )
         .done(function( data ) {
         $('#modificarempresa').html(data).fadeIn();
-      });
-    });
-$('#eliminar$count').click(function(){
-      $.get( '../../usuario/admin/eliminar.php', { id:'$id'} )
-	  .done(function() {
       });
     });
   </script>
@@ -80,3 +74,4 @@ echo'
 </div>
 </div>
 ';
+

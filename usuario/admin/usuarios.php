@@ -6,7 +6,7 @@ echo'
 ';
 $conn = new Conexion();
 $conn->conectar();
-$query="SELECT * FROM usuario";
+$query="SELECT * FROM usuario WHERE  rol_idrol='3' OR rol_idrol='2'";
 $resp=$conn->query($query); 
 $conn->desconectar();
 if(mysqli_num_rows($resp)==0){
@@ -45,8 +45,7 @@ else{
     <td><center><p>'.$apellido.'</p></center></td>
     <td><center><p>'.$usuario.'</p></center></td>
     <td><center><p>'.$correo.'</p></center></td>
-    <td><center><button class="btn-floating waves-effect waves-light" title="Modificar" id="modificar'.$count.'"><i class="material-icons white-text">settings</i></button>
-    <button class="btn-floating waves-effect waves-light" title="Modificar" id="eliminar'.$count.'"><i class="material-icons white-text">close</i></button></center></td>
+    <td><center><button class="btn-floating waves-effect waves-light" title="Modificar" id="modificar'.$count.'"><i class="material-icons white-text">settings</i></button></center></td>
   </tr>
   ';
   echo"

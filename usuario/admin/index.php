@@ -69,9 +69,6 @@ $imagen=$_SESSION['imagen'];
 </div>
 <div id="modificarempresa" class="modal">
 </div>
-<!-- DETALLE DE COMPRA -->
-<div id="detalledecompra" class="modal">
-</div>
 <!-- ERROR DE CREACION DE PRODUCTO -->
 <div id="errorproduct" class="modal">
     <div class="modal-content">
@@ -103,24 +100,6 @@ $imagen=$_SESSION['imagen'];
       <a class="modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
     </div>
 </div>
-<?php 
-if(isset($_GET['elifok'])){
-	echo"
-	<script>
-	$('#eliminar').openModal();
-	</script>
-	";
-}
-?>
-<div id="eliminar" class="modal">
-    <div class="modal-content">
-		<center><img src="../../framework/img/icons/confirmation.png" width="60" height="60"></center>
-		<center><h6> ELIMINADO CORRECTAMENTE</h6></center>
-    </div>
-    <div class="modal-footer">
-      <a class="modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
-    </div>
-</div>
 <?php
 if(isset($_GET['err'])){
 	echo"
@@ -140,13 +119,6 @@ if(isset($_GET['modifok'])){
 	echo"
 	<script>
 		 $('#correctomodifproduct').openModal();
-	</script>
-	";
-}
-if(isset($_GET['elifok'])){
-	echo"
-	<script>
-		 $('#eliminar').openModal();
 	</script>
 	";
 }

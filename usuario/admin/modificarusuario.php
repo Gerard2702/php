@@ -31,7 +31,7 @@ echo'
 		<i class="material-icons prefix">subject</i>
         <input placeholder="Correo" value="'.$datos['correo'].'" name="correo" type="email" class="validate" required>
     </div>
-	<input type="hidden" value="'.$id.'" name="idempresa">
+	<input type="hidden" value="'.$id.'" name="idusuario">
 	<center id="submitboton"><button class="waves-effect waves-light btn cyan darken-2" type="submit">Modificar</button></center>
 	</form>
 	<script>
