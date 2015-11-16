@@ -36,6 +36,6 @@
       </div>
     </div>
 	<br>
-	<center><button class="waves-effect waves-light btn cyan darken-2" type="submit">Registrarse</button></center>
+	<center><button class="waves-effect waves-light btn cyan darken-2" type="submit">Registrar</button></center>
 	</form>
 	</div>

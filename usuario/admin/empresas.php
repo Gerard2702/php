@@ -13,13 +13,13 @@ $numuser = mysqli_num_rows($resp);
             <table class="table  table-hover">
             <thead>
               <tr>
-                <td class="validate white-text">Nombre</td>
-                <td class="validate white-text">Descripcion</td>
-                <td class="validate white-text">Usuario</td>
-                <td class="validate white-text">Contraseña</td>
-                <td class="validate white-text">Telefono</td>
-                <td class="validate white-text">Correo</td>
-                <td class="validate white-text">Opciones</td>
+                <td class="white-text">Nombre</td>
+                <td class="white-text">Descripcion</td>
+                <td class="white-text">Usuario</td>
+                <td class="white-text">Contraseña</td>
+                <td class="white-text">Telefono</td>
+                <td class="white-text">Correo</td>
+                <td class="white-text">Opciones</td>
               </tr>
               </thead>
               <tbody>
@@ -28,13 +28,13 @@ $numuser = mysqli_num_rows($resp);
                   while($modulo = $resp->fetch_assoc()){
                                         ?>
                                 <tr>
-                                <td class="validate white-text"><?php echo $modulo['nombre'];?></td>
-                                <td class="validate white-text"><?php echo $modulo['descripcion'];?></td>
-                                <td class="validate white-text"><?php echo $modulo['usuario'];?></td>
-                                <td class="validate white-text"><?php echo $modulo['pass'];?></td>  
-                                <td class="validate white-text"><?php echo $modulo['telefono'];?></td>  
-                                <td class="validate white-text"><?php echo $modulo['correo'];?></td>              
-                                <td><button class="btn-floating waves-effect waves-light" title="Modificar"><i class="material-icons white-text">settings</i></button>&nbsp;<button class="btn-floating waves-effect waves-light" title="Eliminar"><i class="material-icons white-text">close</i></button></td>
+                                <td class="white-text"><?php echo $modulo['nombre'];?></td>
+                                <td class="white-text"><?php echo $modulo['descripcion'];?></td>
+                                <td class="white-text"><?php echo $modulo['usuario'];?></td>
+                                <td class="white-text"><?php echo $modulo['pass'];?></td>  
+                                <td class="white-text"><?php echo $modulo['telefono'];?></td>  
+                                <td class="white-text"><?php echo $modulo['correo'];?></td>              
+                                <td><button class="btn-floating waves-effect waves-light" title="Modificar" id="modificar"><i class="material-icons white-text">settings</i></button>&nbsp;<button class="btn-floating waves-effect waves-light" title="Eliminar"><i class="material-icons white-text">close</i></button></td>
                                 </tr>   
                                     <?php  }//fin del mientras que recorre resultados
 
