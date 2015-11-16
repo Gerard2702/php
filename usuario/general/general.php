@@ -24,17 +24,25 @@ if ($num_total_registros > 0) {
 
 	$total_paginas = ceil($num_total_registros / $TAMANO_PAGINA);
 	$conn->conectar();*/
-    if(!isset($_POST['buscar'])){
-	$query2="SELECT p.idproducto,p.nombre,p.descripcion,p.precio,p.estado,p.imagen,p.cantidad,c.categoria 
+    if(isset($_POST['buscar'])){
+	
+		$query2="SELECT p.idproducto,p.nombre,p.descripcion,p.precio,p.estado,p.imagen,p.cantidad,c.categoria 
+		from producto p
+		inner join categoria c on c.idcategoria=p.categoria_idcategoria
+		where c.categoria like '%".$_POST['buscar']."%' order by p.idproducto desc";
+	}
+	else if(isset($_POST['buscarnombre'])){
+		
+		$query2="SELECT p.idproducto,p.nombre,p.descripcion,p.precio,p.estado,p.imagen,p.cantidad,c.categoria 
+		from producto p
+		inner join categoria c on c.idcategoria=p.categoria_idcategoria
+		where p.nombre like '%".$_POST['buscarnombre']."%' order by p.idproducto desc";	
+	}
+	else{
+		$query2="SELECT p.idproducto,p.nombre,p.descripcion,p.precio,p.estado,p.imagen,p.cantidad,c.categoria 
 		from producto p
 		inner join categoria c on c.idcategoria=p.categoria_idcategoria
 		order by p.idproducto desc";
-	}
-	else{
-	$query2="SELECT p.idproducto,p.nombre,p.descripcion,p.precio,p.estado,p.imagen,p.cantidad,c.categoria 
-		from producto p
-		inner join categoria c on c.idcategoria=p.categoria_idcategoria
-		where p.nombre like '%".$_POST['buscar']."%'";	
 	}
 	$resp2=$conn->query($query2);
     $num = mysqli_num_rows($resp2);

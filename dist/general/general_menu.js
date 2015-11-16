@@ -7,6 +7,34 @@ $('#carrito').click(function(){
 		});
 });
 
+ $("#buscarproducto").submit(function(event){ 
+ 	event.preventDefault(); 
+	var nombrebuscar = $("#buscarp").val();
+	$('#general').removeClass("selected");
+		$('#cases').addClass("selected");
+		$('#tarjetas').removeClass("selected");
+		$('#monitores').removeClass("selected");
+		$('#memorias').removeClass("selected");
+		$('#boards').removeClass("selected");
+		$('#micros').removeClass("selected");
+		$('#perifericos').removeClass("selected");
+		$('#discos').removeClass("selected");
+		$('#accesorios').removeClass("selected");
+		$('#fuentes').removeClass("selected");
+		$("#opcion").html("<center><img src='../../framework/img/loading.gif' width='40' height='40'><h6>Cargando . . .</h6></center>");
+        $.ajax({
+        type:"POST",
+		url: "../../usuario/general/general.php",
+		dataType:"text",
+  		data:{
+    	buscarnombre:nombrebuscar,
+  		}
+		}).done(function(data) {
+		$("#opcion").hide().html(data).fadeIn();
+		});
+ });
+
+
 $('#general').click(function(){
 		$('#general').addClass("selected");
 		$('#cases').removeClass("selected");
@@ -45,7 +73,7 @@ $('#cases').click(function(){
 		url: "../../usuario/general/general.php",
 		dataType:"text",
   		data:{
-    	buscar:"Apocalypse",
+    	buscar:"Cases",
   		}
 		}).done(function(data) {
 		$("#opcion").hide().html(data).fadeIn();
@@ -66,7 +94,12 @@ $('#tarjetas').click(function(){
 		$('#fuentes').removeClass("selected");
 		$("#opcion").html("<center><img src='../../framework/img/loading.gif' width='40' height='40'><h6>Cargando . . .</h6></center>");
         $.ajax({
-		url: "../../usuario/general/general.php"
+		type:"POST",
+		url: "../../usuario/general/general.php",
+		dataType:"text",
+  		data:{
+    	buscar:"Tarjetas de Video",
+  		}
 		}).done(function(data) {
 		$("#opcion").hide().html(data).fadeIn();
 		});
@@ -86,7 +119,12 @@ $('#monitores').click(function(){
 		$('#fuentes').removeClass("selected");
 		$("#opcion").html("<center><img src='../../framework/img/loading.gif' width='40' height='40'><h6>Cargando . . .</h6></center>");
         $.ajax({
-		url: "../../usuario/general/general.php"
+		type:"POST",
+		url: "../../usuario/general/general.php",
+		dataType:"text",
+  		data:{
+    	buscar:"Monitores",
+  		}
 		}).done(function(data) {
 		$("#opcion").hide().html(data).fadeIn();
 		});
@@ -106,7 +144,12 @@ $('#memorias').click(function(){
 		$('#fuentes').removeClass("selected");
 		$("#opcion").html("<center><img src='../../framework/img/loading.gif' width='40' height='40'><h6>Cargando . . .</h6></center>");
         $.ajax({
-		url: "../../usuario/general/general.php"
+		type:"POST",
+		url: "../../usuario/general/general.php",
+		dataType:"text",
+  		data:{
+    	buscar:"Memorias",
+  		}
 		}).done(function(data) {
 		$("#opcion").hide().html(data).fadeIn();
 		});
@@ -126,7 +169,12 @@ $('#boards').click(function(){
 		$('#fuentes').removeClass("selected");
 		$("#opcion").html("<center><img src='../../framework/img/loading.gif' width='40' height='40'><h6>Cargando . . .</h6></center>");
         $.ajax({
-		url: "../../usuario/general/general.php"
+		type:"POST",
+		url: "../../usuario/general/general.php",
+		dataType:"text",
+  		data:{
+    	buscar:"Mother-Board",
+  		}
 		}).done(function(data) {
 		$("#opcion").hide().html(data).fadeIn();
 		});
@@ -146,7 +194,12 @@ $('#micros').click(function(){
 		$('#fuentes').removeClass("selected");
 		$("#opcion").html("<center><img src='../../framework/img/loading.gif' width='40' height='40'><h6>Cargando . . .</h6></center>");
         $.ajax({
-		url: "../../usuario/general/general.php"
+		type:"POST",
+		url: "../../usuario/general/general.php",
+		dataType:"text",
+  		data:{
+    	buscar:"Microprocesadores",
+  		}
 		}).done(function(data) {
 		$("#opcion").hide().html(data).fadeIn();
 		});
@@ -166,7 +219,12 @@ $('#perifericos').click(function(){
 		$('#fuentes').removeClass("selected");
 		$("#opcion").html("<center><img src='../../framework/img/loading.gif' width='40' height='40'><h6>Cargando . . .</h6></center>");
         $.ajax({
-		url: "../../usuario/general/general.php"
+		type:"POST",
+		url: "../../usuario/general/general.php",
+		dataType:"text",
+  		data:{
+    	buscar:"Perifericos",
+  		}
 		}).done(function(data) {
 		$("#opcion").hide().html(data).fadeIn();
 		});
@@ -186,7 +244,12 @@ $('#discos').click(function(){
 		$('#fuentes').removeClass("selected");
 		$("#opcion").html("<center><img src='../../framework/img/loading.gif' width='40' height='40'><h6>Cargando . . .</h6></center>");
         $.ajax({
-		url: "../../usuario/general/general.php"
+		type:"POST",
+		url: "../../usuario/general/general.php",
+		dataType:"text",
+  		data:{
+    	buscar:"Discos Duros",
+  		}
 		}).done(function(data) {
 		$("#opcion").hide().html(data).fadeIn();
 		});
@@ -206,7 +269,12 @@ $('#accesorios').click(function(){
 		$('#fuentes').removeClass("selected");
 		$("#opcion").html("<center><img src='../../framework/img/loading.gif' width='40' height='40'><h6>Cargando . . .</h6></center>");
         $.ajax({
-		url: "../../usuario/general/general.php"
+		type:"POST",
+		url: "../../usuario/general/general.php",
+		dataType:"text",
+  		data:{
+    	buscar:"Accesorios",
+  		}
 		}).done(function(data) {
 		$("#opcion").hide().html(data).fadeIn();
 		});
@@ -226,10 +294,16 @@ $('#fuentes').click(function(){
 		$('#fuentes').addClass("selected");
 		$("#opcion").html("<center><img src='../../framework/img/loading.gif' width='40' height='40'><h6>Cargando . . .</h6></center>");
         $.ajax({
-		url: "../../usuario/general/general.php"
+		type:"POST",
+		url: "../../usuario/general/general.php",
+		dataType:"text",
+  		data:{
+    	buscar:"Fuentes de Poder",
+  		}
 		}).done(function(data) {
 		$("#opcion").hide().html(data).fadeIn();
 		});
 });
+
 
 

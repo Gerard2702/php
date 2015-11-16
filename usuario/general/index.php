@@ -97,10 +97,10 @@ if ($num_total_registros > 0) {
 <div class="row">
 	<div class="col l2 m6 s12">
 		<div class="card-panel grey darken-4">
-			<form action="" method="">
+			<form id="buscarproducto">
 				<center><span class="white-text"><strong>B&uacute;squeda</strong></span></center>
-				<input placeholder="" type="text" name="buscar" class="validate white-text" required>
-				<center><button class="waves-effect waves-light btn cyan darken-2" name="btnbuscar">Buscar</button></center>
+				<input placeholder="" type="text" name="buscar" id="buscarp" class="validate white-text" required>
+				<center><button type="submit" class="waves-effect waves-light btn cyan darken-2" name="btnbuscar" >Buscar</button></center>
 			</form>	
         </div>
 		<div class="collection grey darken-4">
