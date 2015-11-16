@@ -62,3 +62,22 @@ function continuarComprando(){
 		$("#opcion").hide().html(data).fadeIn();
 		});
 }
+
+function procederPago(){
+	$("#opcion").html("<center><img src='../../framework/img/loading.gif' width='40' height='40'><h6>Cargando . . .</h6></center>");
+        $.ajax({
+		url: "../../carrito/confirmarcarrito.php"
+		}).done(function(data) {
+		$("#opcion").hide().html(data).fadeIn();
+		});
+}
+
+function confirmarCompra(){
+	alert("aqui se completaria la compra");
+		/*$("#opcion").html("<center><img src='../../framework/img/loading.gif' width='40' height='40'><h6>Cargando . . .</h6></center>");
+        $.ajax({
+		url: "../../carrito/confirmarcarrito.php"
+		}).done(function(data) {
+		$("#opcion").hide().html(data).fadeIn();
+		});*/
+}

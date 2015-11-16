@@ -124,8 +124,8 @@ $_SESSION['cancarrito']=$cantidadcarrito;
           <a class="waves-effect waves-light btn white grey-text text-darken-4 center-align" onclick="continuarComprando()">Continuar Comprando</a>
           </a></td>
           <td colspan="2" class="right-align">
-            <form action="confirmarebooks.php" method="POST">
-              <a title="Tramitar" type="submit" id="proceder_pagar"  class="waves-effect waves-light btn cyan darken-2">
+            <form >
+              <a title="Tramitar" type="submit" id="proceder_pagar" onclick="procederPago();" class="waves-effect waves-light btn cyan darken-2">
                 Proceder a Pagar
               </a>
             </form>
@@ -157,7 +157,7 @@ $_SESSION['cancarrito']=$cantidadcarrito;
           <div class="row"> 
           <?php if(isset($micarrito) && $_SESSION['cancarrito']!=0){ ?>
             <form action="confirmarebooks.php" method="POST">
-              <button title="Tramitar" type="submit" name="tramitar"  class="col s12 waves-effect waves-light btn cyan darken-2">
+              <button title="Tramitar" type="submit" onclick="procederPago();" name="tramitar"  class="col s12 waves-effect waves-light btn cyan darken-2">
                 PAGAR
               </button>
             </form>
