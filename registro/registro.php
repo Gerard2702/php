@@ -18,7 +18,7 @@
 		<div id="seleccion" class="card-panel grey darken-4">
 			<center><img src="../framework/img/logopeq.png" width="120" height="100"></center>
 			<center><h6 class="white-text">PC-Locker<br><strong>Registro</strong></h6></center>
-			<form method="post" id="formulario" action="ingreso.php">
+			<form method="post" id="formulario" action="ingreso.php" enctype="multipart/form-data">
 				<div class="input-field">
 					<i class="material-icons prefix white-text">person_pin</i>
 					<input placeholder="Nombre" id="nombre" name="nombre" type="text" class="validate white-text" required>
@@ -39,10 +39,6 @@
 					<i class="material-icons prefix white-text">https</i>
 					<input placeholder="Contrase&ntilde;a" id="password" name="password" type="password" class="validate white-text" required>
 				</div>
-				<div class="input-field">
-					<i class="material-icons prefix white-text">https</i>
-					<input placeholder="Confirmar Contrase&ntilde;a" id="password_confirmation" type="password" class="validate white-text"required>
-				</div>
 				<div class="file-field input-field">
 					<div class="waves-effect waves-light btn cyan darken-2">
 						<span>Imagen</span>
@@ -58,12 +54,48 @@
 		</div>
 	</div>
 </div>
-<script type="text/JavaScript">
-	
-	
-</script>
-
+<!-- ERROR DE REGISTRO DE USUARIO -->
+<div id="error3" class="modal">
+    <div class="modal-content">
+		<center><img src="../framework/img/icons/warning.png" width="60" height="60"></center>
+		<center><h5>El nombre de usuario o correo ya existe !</h5></center>
+		<center><h6>Intente nuevamente</h6></center>
+    </div>
+    <div class="modal-footer">
+      <a class="modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
+    </div>
+</div>
+<!-- ERROR DE IMAGEN DE REGISTRO DE USUARIO -->
+<div id="error12" class="modal">
+    <div class="modal-content">
+		<center><img src="../framework/img/icons/warning.png" width="60" height="60"></center>
+		<center><h5>Ocurrio un error con la imagen de usuario</h5></center>
+		<center><h6>Intente nuevamente</h6></center>
+    </div>
+    <div class="modal-footer">
+      <a class="modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
+    </div>
+</div>
+<?php
+if(isset($_GET['err'])){
+	$err=$_GET['err'];
+	if($err==3){
+		echo"
+		<script>
+			$('#error3').openModal();
+		</script>
+		";
+	}
+	if($err==1 || $err==2){
+		echo"
+		<script>
+			$('#error12').openModal();
+		</script>
+		";
+	}
+}
+?>
 <!-- FOOTER -->
 <?php include("../class/footer/footer.php"); ?>
 </body>
-</html
+</html>
