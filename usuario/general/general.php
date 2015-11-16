@@ -41,7 +41,7 @@ if ($num_total_registros > 0) {
 
 
 ?>
-
+<script src="../../dist/general/general.js"></script>
 <div class="card-panel grey darken-4">
 	<div class="row">
 	<?php if($num >0){ ?>
@@ -57,14 +57,9 @@ if ($num_total_registros > 0) {
               <span class="white-text" ><?php echo $producto['precio'];?></span><br>
             </div>
             <div class="card-action">
-              <form action="" method="POST" id="detalle">
-              <input type="hidden" name="id" value="<?php echo $ebook['idproducto'];?>">
-              <input type="hidden" name="nombre" value="<?php echo $ebook['nombre'];?>">
-              <input type="hidden" name="precio" value="<?php echo $ebook['precio'];?>">
-              <input type="hidden" name="imagen" value="<?php echo $ebook['imagen'];?>">
-              <input type="hidden" name="cantidad" value="1">
-              <button class="waves-effect waves-light btn cyan darken-2 ">Ver más Detalles</button>
-          	  </form>
+              <a class="waves-effect waves-light btn cyan darken-2 " id="agregarcarrito" 
+              onclick="agregarcarrito('<?php echo $producto['idproducto'];?>','<?php echo $producto['nombre'];?>','<?php echo $producto['precio'];?>','<?php echo $producto['imagen'];?>')">
+              Ver más Detalles</a>
             </div>
      	</div>
      </div>

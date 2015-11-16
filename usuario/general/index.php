@@ -78,7 +78,7 @@ if ($num_total_registros > 0) {
 		<a href="#!" class="brand-logo"><img src="../../framework/img/logonav.png" class="responsive-img" width="120" height="90"></a>
 		<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 		<ul class="right hide-on-med-and-down">
-			<li><a href="#!" id"carrito"><span class="large material-icons" >shopping_cart</span>Carrito<span class="badge">0</span></a></li>
+			<li><a href="#!" id="carrito"><span class="large material-icons" >shopping_cart</span>Carrito<span class="badge">0</span></a></li>
 			<li><a id="drop" data-activates='dropdown1' href="#"><span class="material-icons">call_received</span><?php echo $nombre." ".$apellido; ?></a></li>
 			<ul id='dropdown1' class='dropdown-content grey darken-4'>
 				<li><center><img src="../../<?php echo $imagen;?>" width="150" height="150"></center></li>
@@ -97,7 +97,7 @@ if ($num_total_registros > 0) {
 <div class="row">
 	<div class="col l2 m6 s12">
 		<div class="card-panel grey darken-4">
-			<form action="" method="POST">
+			<form action="" method="">
 				<center><span class="white-text"><strong>B&uacute;squeda</strong></span></center>
 				<input placeholder="" type="text" name="buscar" class="validate white-text" required>
 				<center><button class="waves-effect waves-light btn cyan darken-2" name="btnbuscar">Buscar</button></center>
@@ -118,7 +118,7 @@ if ($num_total_registros > 0) {
 			<a href="#!" style="text-decoration:none; color:white;" class="collection-item grey darken-4" id="fuentes">Fuentes de Poder</a>
 		</div>
 	</div>
-	<script src="../../dist/general/general.js"></script>
+	<script src="../../dist/general/general_menu.js"></script>
 	<!-- AQUI SE MUESTRA LO QUE SE SELECCIONA EN CATEGORIAS O LA BUSQUEDA -->
 	<div class="col l10 m6 s12" id="contenido">
 		<div  id="opcion">
