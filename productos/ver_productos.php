@@ -1,0 +1,3 @@
+<?php
+echo "ESTE SERA EL CATALOGO DE PRODUCTOS";
+?>

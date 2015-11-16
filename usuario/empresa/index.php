@@ -23,6 +23,7 @@ $imagen=$_SESSION['imagen'];
 	$(document).ready(function(){
 		$(".button-collapse").sideNav();
 		$('#drop').dropdown();
+		$('select').material_select();
 	});
 	</script>
 </head>
@@ -59,8 +60,8 @@ $imagen=$_SESSION['imagen'];
 	<script src="../../dist/empresa/empresa.js"></script>
 	<!-- AQUI SE MUESTRA LO QUE SE SELECCIONA EN EL MENU -->
 	<div class="col l10 m6 s12">
-		<div class="card-panel" id="opcion">
-			
+		<div  id="opcion">
+			<?php include ('../../productos/ver_productos.php'); ?>
 		</div>
 	</div>
 </div>
