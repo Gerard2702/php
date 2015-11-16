@@ -74,6 +74,19 @@ function procederPago(){
 
 function confirmarCompra(){
 	alert("aqui se completaria la compra");
+	var redir="../../usuario/general/detallecompra.php";
+	$("#opcion").html("<center><img src='../../framework/img/loading.gif' width='40' height='40'><h6>Cargando . . .</h6></center>");
+        $.ajax({
+        type:"POST",
+		url: "../../dist/general/guardarcompra.php",
+		dataType:"text",
+		data:{
+    	confirmar:"confirmar",
+  		}
+		}).done(function(data) {
+		$("#opcion").hide().html(redir).fadeIn();
+		});
+
 		/*$("#opcion").html("<center><img src='../../framework/img/loading.gif' width='40' height='40'><h6>Cargando . . .</h6></center>");
         $.ajax({
 		url: "../../carrito/confirmarcarrito.php"

@@ -9,6 +9,7 @@ $idusuario = $_SESSION['id'];
 $nombre_cliente=$_SESSION['nombre']." ".$_SESSION['apellido'];
 $correo= $_SESSION['correo'];
 
+
 }
 else{
   header("location:login.php");
