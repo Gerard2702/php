@@ -67,6 +67,81 @@ $imagen=$_SESSION['imagen'];
 	<?php include ('../../usuario/admin/usuarios.php'); ?>	
 	</div>
 </div>
+<div id="modificarempresa" class="modal">
+</div>
+<!-- DETALLE DE COMPRA -->
+<div id="detalledecompra" class="modal">
+</div>
+<!-- ERROR DE CREACION DE PRODUCTO -->
+<div id="errorproduct" class="modal">
+    <div class="modal-content">
+		<center><img src="../../framework/img/icons/warning.png" width="60" height="60"></center>
+		<center><h6>ERROR</h6></center>
+		<center><h6>Intente nuevamente</h6></center>
+    </div>
+    <div class="modal-footer">
+      <a class="modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
+    </div>
+</div>
+<!-- PRODUCTO CREADO CORRECTAMENTE -->
+<div id="correctoproduct" class="modal">
+    <div class="modal-content">
+		<center><img src="../../framework/img/icons/confirmation.png" width="60" height="60"></center>
+		<center><h6> SE HA CREADO CORRECTAMENTE</h6></center>
+    </div>
+    <div class="modal-footer">
+      <a class="modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
+    </div>
+</div>
+<!-- PRODUCTO MODIFICADO CORRECTAMENTE -->
+<div id="correctomodifproduct" class="modal">
+    <div class="modal-content">
+		<center><img src="../../framework/img/icons/confirmation.png" width="60" height="60"></center>
+		<center><h6> SE HA MODIFICADO CORRECTAMENTE</h6></center>
+    </div>
+    <div class="modal-footer">
+      <a class="modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
+    </div>
+</div>
+<div id="eliminar" class="modal">
+    <div class="modal-content">
+		<center><img src="../../framework/img/icons/confirmation.png" width="60" height="60"></center>
+		<center><h6> ELIMINADO CORRECTAMENTE</h6></center>
+    </div>
+    <div class="modal-footer">
+      <a class="modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
+    </div>
+</div>
+<?php
+if(isset($_GET['err'])){
+	echo"
+	<script>
+		 $('#errorproduct').openModal();
+	</script>
+	";
+}
+if(isset($_GET['success'])){
+	echo"
+	<script>
+		 $('#correctoproduct').openModal();
+	</script>
+	";
+}
+if(isset($_GET['modifok'])){
+	echo"
+	<script>
+		 $('#correctomodifproduct').openModal();
+	</script>
+	";
+}
+if(isset($_GET['elifok'])){
+	echo"
+	<script>
+		 $('#eliminar').openModal();
+	</script>
+	";
+}
+?>
 <!-- FOOTER -->
 <?php include("../../class/footer/footer.php"); ?>
 </body>

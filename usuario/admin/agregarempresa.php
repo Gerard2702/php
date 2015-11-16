@@ -1,7 +1,10 @@
-<div class="card-panel grey darken-4">
+	<script>
+		$("select").material_select();
+	</script>
+	<div class="card-panel grey darken-4">
 	<center><img src="../../framework/img/logopeq.png" width="120" height="100"></center>
 	<center><h6 class="white-text">PC-Locker<br><strong>Registro de Empresas</strong></h6></center>
-	<form method="post" action="guardarregistro.php">
+	<form method="post" action="../../usuario/admin/guardarregistro.php" id="formempresa" enctype="multipart/form-data">
 	<div class="input-field">
 		<i class="material-icons prefix white-text">person_pin</i>
         <input placeholder="Nombre Empresa" id="nombre" name="nombre" type="text" class="validate white-text" required>
@@ -26,7 +29,21 @@
 		<i class="material-icons prefix white-text">phone</i>
         <input placeholder="Telefono" id="telefono" name="telefono" type="text" class="validate white-text" required>
     </div>
+    <div class="file-field input-field">
+      <div class="waves-effect waves-light btn cyan darken-2">
+        <span>Archivo</span>
+        <input type="file" name="imagen" accept="image/*" placeholder="Selecionar Imagen" required>
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate white-text" type="text">
+      </div>
+    </div>
 	<br>
-	<center><button class="waves-effect waves-light btn cyan darken-2" type="submit">Registrar</button></center>
+	<center id="submitboton"><button class="waves-effect waves-light btn cyan darken-2" type="submit">Registrar</button></center>
 	</form>
 	</div>
+	<script>
+		$("#formempresa").submit(function(){
+			$("#submitboton").hide().html("<img src=\'../../framework/img/loading.gif\' width=\'40\' height=\'40\'><h6 style=\'color:white;\'>Guardando . . .</h6>").fadeIn();
+		});
+	</script>
