@@ -25,13 +25,52 @@ $imagen=$_SESSION['imagen'];
 		$(".button-collapse").sideNav();
 		$('#drop').dropdown();
 	});
+
+	$(document).ready(function() {
+		$('#EmpresaAdd').click(function(){
+		$('#EmpresaAdd').addClass("selected");
+		$('#Empresas').removeClass("selected");
+		$('#Product').removeClass("selected");
+		$('#Users').removeClass("selected");
+        $("#central").load('agregarempresa.php');
+    });
+
+		$('#Empresas').click(function(){
+		$('#Empresas').addClass("selected");
+		$('#EmpresaAdd').removeClass("selected");
+		$('#Product').removeClass("selected");
+		$('#Users').removeClass("selected");
+        $("#central").load('empresas.php');
+    });
+
+		$('#Product').click(function(){
+		$('#Product').addClass("selected");
+		$('#Empresas').removeClass("selected");
+		$('#EmpresaAdd').removeClass("selected");
+		$('#Users').removeClass("selected");
+        $("#central").load('productos.php');
+    });
+
+		$('#Users').click(function(){
+		$('#Users').addClass("selected");
+		$('#Empresas').removeClass("selected");
+		$('#Product').removeClass("selected");
+		$('#EmpresaAdd').removeClass("selected");
+        $("#central").load('usuarios.php');
+    });
+	});
 	</script>
+	<style>
+	.selected{
+		border-right: 8px solid #29CAE5;
+	}
+	</style>
 </head>
 <body class="grey lighten-1">
 <!-- NAVBAR DE ADMINISTRADOR -->
 <nav>
     <div class="nav-wrapper grey darken-4">
-		<a href="#!" class="brand-logo"><img src="../../framework/img/logonav.png" class="responsive-img" width="120" height="90"></a>
+		<a href="index.php" class="brand-logo"><img src="../../framework/img/logonav.png" class="responsive-img" width="120" height="90"></a>
 		<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 		<ul class="right hide-on-med-and-down">
 			<li><a id="drop" data-activates='dropdown1' href="#"><span class="material-icons">call_received</span><?php echo $nombre." ".$apellido; ?></a></li>
@@ -52,14 +91,14 @@ $imagen=$_SESSION['imagen'];
 	<div class="col l2 m6 s12">
 		<div class="collection grey darken-4">
 			<center class="collection-item grey darken-4"><span class="white-text" ><strong>Menu</strong></span></center>
-			<a href="#!" class="collection-item grey darken-4" style="text-decoration:none; color:white; border-right: 8px solid #29CAE5;">Usuarios</a>
-			<a href="#!" style="text-decoration:none; color:white;" class="collection-item grey darken-4">Agregar Empresa</a>
-			<a href="#!" style="text-decoration:none; color:white;" class="collection-item grey darken-4">Empresas</a>
-			<a href="#!"  style="text-decoration:none; color:white;"class="collection-item grey darken-4">Productos</a>
+			<a href="#!" class="collection-item grey darken-4" style="text-decoration:none; color:white;" id="Users">Usuarios</a>
+			<a href="#!" style="text-decoration:none; color:white;" class="collection-item grey darken-4" id="EmpresaAdd">Agregar Empresa</a>
+			<a href="#!" style="text-decoration:none; color:white;" class="collection-item grey darken-4" id="Empresas">Empresas</a>
+			<a href="#!"  style="text-decoration:none; color:white;"class="collection-item grey darken-4" id="Product">Productos</a>
 		</div>
 	</div>
 	<!-- AQUI SE MUESTRA LO QUE SE SELECCIONA EN EL MENU -->
-	<div class="col l10 m6 s12">
+	<div class="col l10 m6 s12" id="central">		
 	</div>
 </div>
 <!-- FOOTER -->
