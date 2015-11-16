@@ -31,6 +31,7 @@
 		</thead>
 		<tbody>
 		';
+		$count=1;
 		while($oc=$resp->fetch_assoc()){
 			$id=$oc['idcompra'];
 			$fecha=$oc['fecha_compra'];
@@ -43,9 +44,22 @@
 				<td><center>'.$fecha.'</center></td>
 				<td><center>'.$nombre.' '.$apellido.'</center></td>
 				<td><center>'.$correo.'</center></td>
-				<td><center><button class="btn-floating waves-effect waves-light" title="Detalles"><i class="material-icons white-text">settings</i></button></center></td>
+				<td><center><button id="detacompra'.$count.'" class="btn-floating waves-effect waves-light" title="Detalles"><i class="material-icons white-text">settings</i></button></center></td>
 			</tr>
 			';
+			echo'
+			<script>
+				$("#detacompra'.$count.'").click(function(){
+					$("#detalledecompra").openModal();
+					$("#detalledecompra").html("<div class=\'modal-content\'><center><img src=\'../../framework/img/loading.gif\' width=\'40\' height=\'40\'><h6>Cargando Informacion . . .</h6></center></div>");
+					$.get( \'../../productos/detalle_ordencompra.php\', { id:\''.$id.'\',empresa:\''.$empresa.'\'} )
+						.done(function( data ) {
+						$(\'#detalledecompra\').html(data).fadeIn();
+					});
+				});
+			</script>
+			';
+			$count++;
 		}
 		echo'
 		</tbody>

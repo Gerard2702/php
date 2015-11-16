@@ -71,6 +71,9 @@ $imagen=$_SESSION['imagen'];
 <!-- MODAL PARA MODIFICAR PRODUCTOS -->
 <div id="modificarproducto" class="modal">
 </div>
+<!-- DETALLE DE COMPRA -->
+<div id="detalledecompra" class="modal">
+</div>
 <!-- ERROR DE CREACION DE PRODUCTO -->
 <div id="errorproduct" class="modal">
     <div class="modal-content">
