@@ -45,7 +45,7 @@ echo'
 		</select>
 	</div>	
 	<div class="file-field input-field">
-      <div class="waves-effect waves-light btn cyan darken-2">
+      <div class="waves-effect waves-light btn cyan darken-3">
         <span>Archivo</span>
         <input type="file" name="imagen" accept="image/*" placeholder="Selecionar Imagen" required>
       </div>
