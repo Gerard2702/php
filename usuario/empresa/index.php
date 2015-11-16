@@ -17,6 +17,7 @@ $imagen=$_SESSION['imagen'];
 	<script src="../../framework/materialize/js/materialize.min.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 	<link rel="shortcut icon" href="../../framework/img/logopeq.png">
+	<link href="../../dist/empresa/empresa.css" rel="stylesheet">
 	<title>PC-Locker</title>
 	<script>
 	$(document).ready(function(){
@@ -50,13 +51,17 @@ $imagen=$_SESSION['imagen'];
 	<div class="col l2 m6 s12">
 		<div class="collection grey darken-4">
 			<center class="collection-item grey darken-4"><span class="white-text" ><strong>Menu</strong></span></center>
-			<a href="#!" class="collection-item grey darken-4" style="text-decoration:none; color:white; border-right: 8px solid #29CAE5;">Ingresar producto</a>
-			<a href="#!" style="text-decoration:none; color:white;" class="collection-item grey darken-4">Modificar producto</a>
-			<a href="#!" style="text-decoration:none; color:white;" class="collection-item grey darken-4">Ver productos</a>
+			<a href="#!" class="collection-item grey darken-4 white-text activamenu" id="sel1">Ver productos</a>
+			<a href="#!" class="collection-item grey darken-4 white-text" id="sel2">Ingresar producto</a>
+			<a href="#!" class="collection-item grey darken-4 white-text" id="sel3">Modificar producto</a>
 		</div>
 	</div>
+	<script src="../../dist/empresa/empresa.js"></script>
 	<!-- AQUI SE MUESTRA LO QUE SE SELECCIONA EN EL MENU -->
 	<div class="col l10 m6 s12">
+		<div class="card-panel" id="opcion">
+			
+		</div>
 	</div>
 </div>
 <!-- FOOTER -->
