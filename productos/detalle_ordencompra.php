@@ -7,7 +7,7 @@ echo'
 ';
 $conn = new Conexion();
 $conn->conectar();
-$query="SELECT producto.nombre,producto.imagen,detalle_compra.precio,detalle_compra.cantidad FROM producto,detalle_compra WHERE detalle_compra.compra_idcompra=$idcompra AND producto.empresa_idempresa=$empresa";
+$query="SELECT producto.nombre,producto.imagen,detalle_compra.precio,detalle_compra.cantidad FROM producto,detalle_compra WHERE detalle_compra.compra_idcompra=$idcompra AND producto.empresa_idempresa=$empresa AND detalle_compra.producto_idproducto = producto.idproducto ";
 $resp=$conn->query($query);
 $conn->desconectar();
 if(mysqli_num_rows($resp)==0){
