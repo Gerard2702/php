@@ -126,6 +126,29 @@ if ($num_total_registros > 0) {
 		</div>
 	</div>
 </div>
+<!-- FIN DE COMPRA -->
+<div id="correctocompra" class="modal">
+    <div class="modal-content">
+		<center><img src="../../framework/img/icons/confirmation.png" width="60" height="60"></center>
+		<center><h6>SE HA COMPLETADO LA COMPRA</h6></center>
+    </div>
+    <div class="modal-footer">
+      <a class="modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
+    </div>
+</div>
+<?php
+if(isset($_GET['fincompra'])){
+	echo"
+	<script>
+		var correcto=1;
+		if(correcto==1){
+			$('#correctocompra').openModal();
+			correcto++;
+		}
+	</script>
+	";
+}
+?>
 <!-- FOOTER -->
 <?php include("../../class/footer/footer.php"); ?>
 </body>

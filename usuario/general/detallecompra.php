@@ -1,7 +1,10 @@
 <?php
 //include("librerias/conexion/conexion.php");
 
-session_start(); /* Verificar inicio de sesion*/
+session_start(); 
+include("../../class/conexion/conexion.php");
+$conn = new Conexion();
+$conn->conectar();/* Verificar inicio de sesion*/
 /*if(isset($_SESSION['id'])){
 $usuario = $_SESSION['usuario'];*/
 
@@ -21,15 +24,15 @@ $codigo_postal = $datos['codigo_postal'];
 $telefono = $datos['telefono'];*/
 $idfacturacion = $_SESSION['facturacion'];
 $sql3="SELECT *from compra where compra.idcompra='$idfacturacion'";
-$rs3= mysql_query($sql3);
-$datofecha= mysql_fetch_array($rs3,MYSQL_ASSOC);
+$rs3= $conn->query($sql3);
+$datofecha= mysqli_fetch_array($rs3,MYSQL_ASSOC);
 $sql2 = "SELECT compra.fecha_compra,producto.nombre,producto.precio,producto.imagen from detalle_compra inner join 
 compra on compra.idcompra = detalle_compra.compra_idcompra 
 inner join producto on producto.idproducto=detalle_compra.producto_idproducto where compra.idcompra='$idfacturacion';";
-$rs22 = mysql_query($sql2);
-$rs2 = mysql_query($sql2);
+$rs22 = $conn->query($sql2);
+$rs2 = $conn->query($sql2);
 $TOTAL=0;
-while($costos = mysql_fetch_array($rs22,MYSQL_ASSOC)){
+while($costos = mysqli_fetch_array($rs22,MYSQL_ASSOC)){
   $subtotal= $costos['precio']*1;
   $TOTAL= $subtotal+$TOTAL;
 }
@@ -39,7 +42,7 @@ else{
 }*/
 
 ?>
-  <div class="container">
+  <div class="card-panel grey darken-4">
     <div class="row">
      <div class="col s12 m9 l9">
        <h4 class="green-text text-accent-4">Transacción Completa</h4>
@@ -61,14 +64,14 @@ else{
 
         <tbody>
         <tr class="grey-text text-darken-4">
-          <td><strong>Compra hecha el: </strong><?php echo $datofecha['fecha_facturacion'];?><br>
-              <strong>Forma de Pago:</strong> Paypal <br>
-              <strong>Fecha de Pago:</strong> <?php echo $datofecha['fecha_facturacion'];?>   
+          <td><strong>Compra hecha el: </strong><?php echo $datofecha['fecha_compra'];?><br>
+              <strong>Forma de Pago:</strong> NA <br>
+              <strong>Fecha de Pago:</strong> <?php echo $datofecha['fecha_compra'];?>   
         </td>
-          <td><?php //echo $nombre_cliente;?><br>
-              <?php //echo $direccion;?><br>
-              <?php //echo $ciudad.", ".$estado.", ".$codigo_postal;?><br>
-              <?php //echo $pais;?><br>
+          <td><?php echo $_SESSION['nombre']." ".$_SESSION['apellido'];?><br>
+              <?php //echo $direccion;?>
+              <?php //echo $ciudad.", ".$estado.", ".$codigo_postal;?>
+              <?php echo "El Salvador";?><br>
               <?php //echo $telefono;?>
 
           </td>
@@ -97,10 +100,10 @@ else{
         <?php           
               $Total=0;
               $cantidadarticulos=0;
-              while($datolibros = mysql_fetch_array($rs2,MYSQL_ASSOC)){
+              while($datolibros = mysqli_fetch_array($rs2,MYSQL_ASSOC)){
         ?>
         <tr>
-          <td><img src="<?php echo $datolibros['imagen']?>" alt="" width="100" height="125"> </td>
+          <td><img src="<?php echo "../../".$datolibros['imagen']?>" alt="" width="100" height="125"> </td>
           <td><?php echo $datolibros['nombre'];?></td>
            <td class="right-align"><?php echo "US $".$datolibros['precio'];?></td>
            <td class="right-align " ><?php echo 1;?></td> 
@@ -113,7 +116,7 @@ else{
             }
         ?>
         <tr>
-          <td class="right-align" colspan="5"><a href="ebooks.php" ><button class="waves-effect waves-light btn light-blue darken-4">Volver a la Tienda</button></a></td>
+          <td class="right-align" colspan="5"><a href="index.php?fincompra=1" ><button class="waves-effect waves-light btn light-blue darken-4">Volver a la Tienda</button></a></td>
         </tr>
         </tbody>
       </table>

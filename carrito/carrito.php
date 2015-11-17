@@ -126,7 +126,7 @@ $_SESSION['cancarrito']=$cantidadcarrito;
           <td colspan="2" class="right-align">
             <form >
               <a title="Tramitar" type="submit" id="proceder_pagar" onclick="procederPago();" class="waves-effect waves-light btn cyan darken-2">
-                Proceder a Pagar
+                Finalizar
               </a>
             </form>
           </td>
@@ -154,7 +154,7 @@ $_SESSION['cancarrito']=$cantidadcarrito;
           <strong>Total ( <?php if(isset($micarrito) && $_SESSION['cancarrito']!=0){echo $cantidadarticulos;} else {echo "0";}?> Articulos)</strong><br>
           <strong class="red-text"><?php if(isset($micarrito) && $_SESSION['cancarrito']!=0){echo "US $".$Total;} else{ echo "US 0.00";}?></strong>
           </div>
-          <div class="row"> 
+          <!--<div class="row"> 
           <?php if(isset($micarrito) && $_SESSION['cancarrito']!=0){ ?>
             <form action="confirmarebooks.php" method="POST">
               <button title="Tramitar" type="submit" onclick="procederPago();" name="tramitar"  class="col s12 waves-effect waves-light btn cyan darken-2">
@@ -169,8 +169,8 @@ $_SESSION['cancarrito']=$cantidadcarrito;
             </form>
             <?php } ?>
             <br>
-            </a>
-          </div>
+            
+          </div>-->
         </div>
       </div>
     </div>

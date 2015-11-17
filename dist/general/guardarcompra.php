@@ -10,9 +10,12 @@ $idusuario = $_SESSION['id'];
 
 $micarrito=$_SESSION['carrito'];
 $fecha_facturacion = date("Y-m-d");
-$query = "INSERT into compra(fecha_compra,usuario_idusuario) values ('$fecha_facturacion','','$idusuario');";
+$query = "INSERT into compra(fecha_compra,usuario_idusuario) values ('$fecha_facturacion','$idusuario');";
 $rsfac = $conn->insert_delete_update($query);
-$idfac = mysqli_insert_id($conn);
+$query2 = "SELECT MAX(idcompra) as maximoid from compra;";
+$resul = $conn->query($query2);
+$idfacc = $resul->fetch_assoc();
+$idfac = $idfacc['maximoid'];
 
 $_SESSION['facturacion']= $idfac;
 for($i=0;$i<count($micarrito);$i++){   
